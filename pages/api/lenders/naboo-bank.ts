@@ -1,19 +1,23 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { LenderGetResponseExtended, LenderPostResponse } from 'lib/types';
+import {
+  FieldTypes,
+  LenderGetResponseExtended,
+  LenderPostResponse,
+} from 'lib/types';
 
 export const nabooBankData: LenderGetResponseExtended = {
   name: 'Naboo Bank',
   fields: [
-    { name: 'first_name', type: 'text', required: true },
-    { name: 'last_name', type: 'text', required: true },
+    { name: 'first_name', type: FieldTypes.TEXT, required: true },
+    { name: 'last_name', type: FieldTypes.TEXT, required: true },
     {
       name: 'gender',
-      type: 'select',
+      type: FieldTypes.SELECT,
       required: true,
-      options: ['opt1', 'opt2', 'opt3'],
+      options: ['Female', 'Male', 'Other'],
     },
-    { name: 'contractor', type: 'checkbox', required: false },
+    { name: 'contractor', type: FieldTypes.CHECKBOX, required: false },
   ],
 };
 
@@ -21,9 +25,15 @@ const handler = (
   req: NextApiRequest,
   res: NextApiResponse<LenderGetResponseExtended | LenderPostResponse>,
 ): void => {
+  
   if (req.method === 'POST') {
+    // to get post data
+    // console.log(req.body)
     const decision = Math.random() > 0.5 ? 'accepted' : 'declined';
-    res.status(200).json({ decision });
+    // to mimic server latency
+    setTimeout(() => {
+      res.status(200).json({ decision });
+    }, 1000);
   } else {
     res.status(200).json(nabooBankData);
   }

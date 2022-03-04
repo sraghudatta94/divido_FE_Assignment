@@ -1,28 +1,58 @@
-export interface LenderGetResponse {
-  name: string;
-  fields: Array<
-    | 'first_name'
-    | 'last_name'
-    | 'email'
-    | 'date_of_birth'
-    | 'monthly_income'
-    | 'gender'
-    | 'address'
-  >;
+export enum FieldTypes {
+  TEXT = 'TEXT',
+  SELECT = 'SELECT',
+  CHECKBOX = 'CHECKBOX',
+  DATE = 'DATE',
 }
 
-export interface LenderGetResponseExtended {
+export interface Lender {
   name: string;
-  fields: Array<LenderFields>;
+  slug: string;
 }
 
-export interface LenderFields {
+export type LenderFieldConfigSimple = Array<
+  | 'first_name'
+  | 'last_name'
+  | 'email'
+  | 'date_of_birth'
+  | 'monthly_income'
+  | 'gender'
+  | 'address'
+>;
+
+export interface LenderField {
   name: string;
-  type: string;
+  label?: string;
+  type: FieldTypes;
   required: boolean;
   options?: Array<string>;
 }
 
+export type LenderFieldConfigExtended = Array<LenderField>;
+
+export type LenderFieldConfig =
+  | LenderFieldConfigSimple
+  | LenderFieldConfigExtended;
+
+export interface LenderGetResponse {
+  name: string;
+  fields: LenderFieldConfigSimple;
+}
+
+export interface LenderGetResponseExtended {
+  name: string;
+  fields: LenderFieldConfigExtended;
+}
+
+export type LenderFormConfig = LenderGetResponse | LenderGetResponseExtended;
+
+
 export interface LenderPostResponse {
   decision: 'accepted' | 'declined';
+}
+
+export interface FormikFormConfig {
+  fields: Array<LenderField>;
+  initialValues: any;
+  validationSchema: any;
 }
