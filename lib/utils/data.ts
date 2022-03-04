@@ -6,6 +6,7 @@ export const lenders: Lender[] = [
   { name: 'Bank of Azeroth', slug: 'bank-of-azeroth' },
   { name: 'Middle Earth Bank', slug: 'middle-earth-bank' },
   { name: 'Naboo Bank', slug: 'naboo-bank' },
+  { name: 'SBI', slug: 'sbi' },
 ];
 
 export const fillDummyData = (
@@ -46,6 +47,21 @@ export const fillDummyData = (
       formik.setFieldValue('first_name', 'Simon');
       formik.setFieldValue('last_name', 'Banker');
       formik.setFieldValue('gender', 'Male');
+      formik.setFieldValue('contractor', true);
+      formik.validateForm();
+
+      // give formik time to breath and let revalidate
+      setTimeout(() => {
+        formik.validateForm();
+      }, 1);
+      break;
+    }
+    case 'sbi': {
+      // fields: ['first_name', 'last_name', 'gender','address', 'contractor'],
+      formik.setFieldValue('first_name', 'Simon');
+      formik.setFieldValue('last_name', 'Banker');
+      formik.setFieldValue('gender', 'Male');
+      formik.setFieldValue('address', 'Hyderabad,India');
       formik.setFieldValue('contractor', true);
       formik.validateForm();
 
