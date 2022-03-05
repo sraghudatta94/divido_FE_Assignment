@@ -17,8 +17,12 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["pages/*"],
+      "@lib/*": ["lib/*"]
+    }
   },
   "exclude": ["node_modules", "cypress/*"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "test/pages/home.test.js"]
 }
