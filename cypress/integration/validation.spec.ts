@@ -10,27 +10,19 @@ context('Form Page', () => {
     cy.visit(host);
   });
 
-  it('Bank 1 flow', () => {
+  it('Empty name field validation', () => {
     cy.contains(`Bank of Azeroth`).click();
     cy.contains(`Fill Dummy Data`).click();
+    cy.get('#first_name').clear();
+
     cy.contains(`Submit`).click();
     cy.wait(3000);
-    cy.contains(`OK`).click();
-  });
+    cy.contains(`first name is required.`);
 
-  it('Bank 2 flow', () => {
-    cy.contains(`Middle Earth Bank`).click();
+    cy.contains(`Reset`).click();
     cy.contains(`Fill Dummy Data`).click();
     cy.contains(`Submit`).click();
     cy.wait(3000);
-    cy.contains(`OK`).click();
-  });
-
-  it('Bank 3 flow', () => {
-    cy.contains(`Naboo Bank`).click();
-    cy.contains(`Fill Dummy Data`).click();
-    cy.contains(`Submit`).click();
-    cy.wait(3000);
-    cy.contains(`OK`).click();
+    cy.contains(`Ok`).click();
   });
 });
