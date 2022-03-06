@@ -12,6 +12,12 @@ There are three banks requesting an Application Form:
 - Naboo Bank
 - Middle Earth Bank
 
+## Artifacts
+
+- <a href="https://divido-fe-assignment.vercel.app/">Live Link</a>
+- <a href="https://drive.google.com/file/d/1xUFGTTNq7uIvVbOM816vdtCrxuC2V2JT/view">Wireframe</a>
+- <a href="https://drive.google.com/file/d/1mjPCdtyryEuj3df2QEcWWl7KLNFjUhNn/view">Demo Video</a>
+
 ## Pre-requisites
 
 1. Git

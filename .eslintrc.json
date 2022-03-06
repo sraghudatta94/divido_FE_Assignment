@@ -18,10 +18,8 @@
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
   },
-  "plugins": [
-    "cypress"
-  ],
+  "plugins": ["cypress"],
   "env": {
-    "cypress/globals": true
+    "jest": true
   }
 }

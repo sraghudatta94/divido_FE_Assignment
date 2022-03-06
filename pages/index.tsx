@@ -27,8 +27,8 @@ const HomePage: NextPage = () => {
               <List>
                 {lenders.map((lender) => (
                   <ListItem key={lender.name}>
-                    <Link data-testid={lender.slug} href={`/${lender.slug}`}>
-                      <a>
+                    <Link href={`/${lender.slug}`}>
+                      <a data-testid={lender.slug}>
                         <Typography>{lender.name}</Typography>
                       </a>
                     </Link>
