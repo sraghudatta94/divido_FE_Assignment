@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "test": "jest --env=jsdom"
+    "test": "jest --env=jsdom",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@date-io/date-fns": "1.x",
