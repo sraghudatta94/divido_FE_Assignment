@@ -5,8 +5,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test:cypress": "npx cypress open",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "test": "jest --env=jsdom"
   },
   "dependencies": {
     "@date-io/date-fns": "1.x",
@@ -23,12 +23,15 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
     "@types/node": "^14.14.41",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "babel-jest": "^27.5.1",
     "cypress": "^7.1.0",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.2.0",
@@ -36,6 +39,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^27.5.1",
     "prettier": "^2.2.1",
     "typescript": "4.2.4"
   },

@@ -32,7 +32,7 @@ export const fillDummyData = (
       // fields: ['first_name', 'email', 'date_of_birth', 'monthly_income'],
       formik.setFieldValue('first_name', 'Simon');
       formik.setFieldValue('email', 'simon@banker.com');
-      formik.setFieldValue('date_of_birth', "1992-02-02T11:35:00.000Z");
+      formik.setFieldValue('date_of_birth', '1992-02-02T11:35:00.000Z');
       formik.setFieldValue('monthly_income', 200000);
       formik.validateForm();
 

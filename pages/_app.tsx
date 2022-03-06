@@ -5,13 +5,12 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 
-import 'nprogress/nprogress.css';
+// import 'nprogress/nprogress.css';
 
 import Layout from 'lib/components/layout';
 import theme from 'lib/theme';
 
 function App({ Component, pageProps }: AppProps) {
-
   // to make nextJS work with Material UI styles
   React.useEffect(() => {
     // Remove the server-side injected CSS.
